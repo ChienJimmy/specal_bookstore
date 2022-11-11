@@ -23,7 +23,7 @@ def getDistrictOption(items, target):
     for item in items:
         name = item['cityName']
         cityname = name[0:3]
-        if cityname in optionList:
+        if cityname in optionList: K=0
         else:
             continue
         # 如果 name 裡面不包含我們選取的縣市名稱(target) 則略過該次迭代
