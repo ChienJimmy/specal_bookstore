@@ -37,11 +37,11 @@ def getDistrictOption(items, target):
         # 如果 district 不在 optionList 裡面，將 district 放入 optionList
         # hint: 使用 if-else 判斷式並使用 append 將內容放入 optionList
 
-def getSpecificBookstore(items, county):
+def getSpecificBookstore(items, county,district):
     specificBookstoreList = []
     for item in items:
         name = item['cityName']
-        if county in name:
+        if district in name:
             specificBookstoreList.append(item)
     return specificBookstoreList
 
@@ -71,7 +71,7 @@ def app():
     county = st.selectbox('請選擇縣市', countyOption)
     districtOption = getDistrictOption(bookstoreList, county)
     district = st.multiselect('請選擇區域', districtOption)
-    specificBookstore = getSpecificBookstore(bookstoreList,district)
+    specificBookstore = getSpecificBookstore(bookstoreList,county,district)
     num = len(specificBookstore)
     st.write(f'總共有{num}項結果', num)
     bookstoreInfo = getBookstoreInfo(specificBookstore)
