@@ -23,16 +23,17 @@ def getDistrictOption(items, target):
     for item in items:
         name = item['cityName']
         cityname = name[0:3]
-        if cityname in optionList: K=0
-        else:
+        if cityname in optionList:
             continue
         # 如果 name 裡面不包含我們選取的縣市名稱(target) 則略過該次迭代
         # hint: 使用 if-else 判斷式並且用 continue 跳過
         name.strip()
         district = name[5:]
         if len(district) == 0: continue
-        if target in name:
-            optionList.append(item)
+        if district in optionList:
+            continue
+        else:
+            optionList.append(district)
         # 如果 district 不在 optionList 裡面，將 district 放入 optionList
         # hint: 使用 if-else 判斷式並使用 append 將內容放入 optionList
 
