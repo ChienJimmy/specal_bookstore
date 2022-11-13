@@ -18,20 +18,6 @@ def getCountyOption(items):
             optionList.append(name)
     return optionList
 
-# def getDistrictOption(items, county):
-#    optionList = []
-#   for item in items:
-#        name = item['cityName']
-#        cityname = name[0:3]
-#        if cityname in optionList:
-#            continue
-#        name.strip()
-#        district = name[5:]
-#        if len(district) == 0: continue
-#        if county in name:
-#            optionList.append(item)
-#    return optionList
-
 def getDistrictOption(items, county):
     distList = []
     for item in items:
