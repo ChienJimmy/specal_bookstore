@@ -69,7 +69,6 @@ def app():
     county = st.selectbox('請選擇縣市', countyOption)
     districtOption = getDistrictOption(bookstoreList, county)
     district = st.multiselect('請選擇區域', districtOption)
-#    district = st.selectbox('請選擇區域', districtOption)
     specificBookstore = getSpecificBookstore(bookstoreList,district)
     num = len(specificBookstore)
     st.write(f'總共有{num}項結果', num)
