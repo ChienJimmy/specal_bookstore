@@ -46,18 +46,30 @@ def getSpecificBookstore(items, district):
 def getBookstoreInfo(items):
     expanderList = []
     for item in items:
-        expander = st.expander(item['name'])
-        expander.image(item['representImage'])
-        expander.metric('hitRate', item['hitRate'])
-        expander.subheader('Introduction')
-        expander.write(item['intro'])
-        expander.subheader('Address')
-        expander.write(item['address'])
-        expander.subheader('Open Time')
-        expander.write(item['openTime'])
-        expander.subheader('Email')
-        expander.write(item['email'])
-        expanderList.append(expander)
+        try: expander = st.expander(item['name'])
+        except: pass
+        try: expander.image(item['representImage'])
+        except: pass
+        try: expander.metric('hitRate', item['hitRate'])
+        except: pass
+        try: expander.subheader('Introduction')
+        except: pass
+        try: expander.write(item['intro'])
+        except: pass
+        try: expander.subheader('Address')
+        except: pass
+        try: expander.write(item['address'])
+        except: pass
+        try: expander.subheader('Open Time')
+        except: pass
+        try: expander.write(item['openTime'])
+        except: pass
+        try: expander.subheader('Email')
+        except: pass
+        try: expander.write(item['email'])
+        except: pass
+        try: expanderList.append(expander)
+        except: pass
     return expanderList
 
 
